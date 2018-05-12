@@ -796,4 +796,10 @@ Laravel 实战教程
 | php artisan tinker           | 进入 tinker 环境 |
 | php artisan route:list       | 查看路由列表       |
 
- 
+#### git  提交
+
+
+
+#### 提交两个方向
+
+####  一个Heroku 一个github 
