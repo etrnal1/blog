@@ -312,3 +312,7 @@ php artisan make:controller UsersController --plain
 #### 遇见路由出现未定义的错误的时候
 
  需要重新生成路由缓存 ，注意自己的语法是否有错误
+
+### laravel 配置数据库
+
+需要修改env 把主机地址改为host
