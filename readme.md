@@ -383,3 +383,28 @@ git checkout master
 git merge modeling-users
 ```
 
+#### 用户注册
+
+```
+$user =User::create([
+
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=bcrypt($request->password),
+
+         ])
+
+         return redirect()->route('users.show'[$user]) ;
+```
+
+我们可以使用 `session()` 方法来访问会话实例。而当我们想存入一条缓存的数据，让它只在下一次的请求内有效时，则可以使用 `flash` 方法。`flash` 方法接收两个参数，第一个为会话的键，第二个为会话的值，我们可以通过下面这行代码的为会话赋值。
+
+```
+session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
+```
+
+之后我们可以使用 `session()->get('success')` 通过键名来取出对应会话中的数据，取出的结果为 `欢迎，您将在这里开启一段新的旅程~`。
+
+接下来的消息提示我们会用会话进行闪存，并分别为其设定好指定的键。`danger`, `warning`, `success`, `info` 这四个键名在 Bootstrap 分别具有不同样式展现效果，因此后面我们将使用这几个键名作为消息提示的专有设定。
+
+现在让我们加入消息提醒视图，让会话消息在视图上进行展示。
