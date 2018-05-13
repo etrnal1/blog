@@ -1,0 +1,35 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.6.0/libexec/bin/yarn.js install
+
+PATH: 
+  /usr/local/bin:/usr/local/php5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/aria2/bin:/usr/local/mysql/bin
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  8.11.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/node-notifier/-/node-notifier-4.6.1.tgz: ENOENT: no such file or directory, utime '/Users/eternal/Library/Caches/Yarn/v1/npm-node-notifier-4.6.1-056d14244f3dcc1ceadfe68af9cff0c5473a33f3/lib/checkGrowl.js'
+
+npm manifest: 
+  {
+    "private": true,
+    "devDependencies": {
+      "gulp": "^3.8.8"
+    },
+    "dependencies": {
+      "laravel-elixir": "^4.0.0",
+      "bootstrap-sass": "^3.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
