@@ -316,3 +316,70 @@ php artisan make:controller UsersController --plain
 ### laravel 配置数据库
 
 需要修改env 把主机地址改为host
+
+### laravel 建立模型文件
+
+#### 	用户模型
+
+app/User.php
+
+创建模型文件命令
+
+```php+HTML
+php artisan make:model Models/Article -m
+```
+
+### 5.5 创建用户对象
+
+  tinker 是一个简单的交互环境 ,通过命令完成操作
+
+Eloquent
+
+````
+php artisan tinker
+
+>>> App\Models\User::create(['name'=> 'Aufree', 'email'=>'aufree@yousails.com','password'=>bcrypt('password')])
+
+artisan tinker
+````
+
+
+
+### 5.6查找用户对象
+
+use 对类进行引用
+
+Use App\Models\User
+
+User::find(1)
+
+ User::first()
+
+User::all();
+
+#### 5.7 更新用户对象
+
+```
+>>>$user =User::first()
+
+$user->name = '';
+
+$user->save();
+保存成功
+```
+
+#### 5.8  结束
+
+  Eloquent 模型的定义与使用
+
+数据库的创建，迁移，数据表生成，数据表回滚
+
+ 模型的使用
+
+tinker 的基本使用
+
+```
+git checkout master
+git merge modeling-users
+```
+
