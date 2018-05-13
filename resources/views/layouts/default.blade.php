@@ -15,6 +15,8 @@
 
 </div>
 
+<script type="/jss/app.js"></script>
+
 
 
 </body>
