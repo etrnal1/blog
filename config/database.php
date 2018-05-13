@@ -1,4 +1,5 @@
 <?php
+$db_config = get_db_config();
 return [
 
     /*
@@ -11,6 +12,7 @@ return [
     | array format for simplicity. Here you can tweak the fetch style.
     |
     */
+
 
     'fetch' => PDO::FETCH_CLASS,
 
