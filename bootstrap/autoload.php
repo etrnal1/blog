@@ -1,7 +1,7 @@
 <?php
 
 define('LARAVEL_START', microtime(true));
-
+require __DIR__.'/helper.php';
 /*
 |--------------------------------------------------------------------------
 | Register The Composer Auto Loader

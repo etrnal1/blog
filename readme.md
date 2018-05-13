@@ -98,7 +98,7 @@ Route::('/','Static@home');
 
 *   nginx 配置域名不生效
 
-       复制server 部分 ，先更改servername ,root 路径  重启nginx 服务器
+     复制server 部分 ，先更改servername ,root 路径  重启nginx 服务器
 
 *   Nginx.conf 添加对应的文件
 
