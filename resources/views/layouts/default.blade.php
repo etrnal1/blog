@@ -15,7 +15,7 @@
 
 </div>
 
-<script type="/jss/app.js"></script>
+<script src="/js/app.js"></script>
 
 
 

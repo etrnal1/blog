@@ -43,4 +43,10 @@ session()->flash('success','欢迎开始一段新的旅程');
 
 
     }
+//用户编辑的页面,查找用户数据，进行将数据赋予给User 视图
+    public function edit($id)
+    {
+        $user =User::find($id);
+        return view('user.edit',compact('user'));
+    }
 }
