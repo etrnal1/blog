@@ -138,6 +138,34 @@ Route::('/','Static@home');
 
 ### 表格
 
+#### 验证
+
+  ```
+'name' => 'required'   验证用户名是否为空格
+ min 和max 验证 用户名的长度
+ 'email' =>'email';
+ 
+  'email' => 'unique:users';
+  
+  confirmd
+  
+  {{csrf_file}}
+  ```
+
+#### sesson 
+
+ flash  ( '会话的键' , '值' );
+
+get ('通过键名取出数据')
+
+
+
+用来判断是否有会话值
+
+Session()->has(0);
+
+`validator`  使用这个做验证规则
+
 | 命令                           | 说明           |
 | ---------------------------- | ------------ |
 | php artisan key:generate     | 生成 App Key   |
@@ -912,7 +940,7 @@ $ php artisan make:controller SessionsController --plain
 
 
 
-借助 Laravel 提供的 `Auth` 的 `attempt` 方法可以让我们很方便的完成用户的身份认证操作，如下所示：
+**借助** Laravel 提供的 `Auth` 的 `attempt` 方法可以让我们很方便的完成用户的身份认证操作，如下所示：
 
 ```
 if (Auth::attempt(['email' => $email, 'password' => $password])) {
@@ -938,6 +966,12 @@ if (Auth::attempt(['email' => $email, 'password' => $password])) {
 
 
 我们在 `store` 方法内使用了 Laravel 提供的 `Auth::user()` 方法来获取 **当前登录用户**的信息，并将数据传送给路由。
+
+
+
+Auth::check()
+
+Auth::login($user);
 
 ### 更新用户
 
@@ -1240,4 +1274,16 @@ class UsersController extends Controller
 首先，我们将用户密码验证的 `required` 规则去掉，这意味着当用户提供空白密码时也会通过验证，因此我们需要对传入的 `password` 进行判断，当其值不为空时才将其赋值给 `data`，避免将空白密码保存到数据库中。
 
 最后我们还通过会话闪存来添加用户资料更新成功后的消息提示。
+
+
+
+Required 判断规则
+
+redirect 重定向
+
+
+
+
+
+我们除了可通过 Auth 中间件的 `auth` 属性来对控制器的一些动作进行过滤，只允许已登录用户访问之外。还可以使用 Auth 中间件提供的 `guest` 选项，用于指定一些只允许未登录用户访问的动作，因此我们需要通过对 `guest` 属性进行设置，只让未登录用户访问登录页面和注册页面。
 

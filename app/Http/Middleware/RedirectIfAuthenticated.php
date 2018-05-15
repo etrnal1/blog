@@ -35,6 +35,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
+
+            session()->flash('info','您已登录,无需在操作');
             return redirect('/');
         }
 
