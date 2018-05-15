@@ -43,6 +43,17 @@ h2 {
   color: #777;
 }
 
+.users {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;

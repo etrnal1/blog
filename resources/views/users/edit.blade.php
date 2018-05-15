@@ -20,8 +20,12 @@
 
             <div class="form-group">
               <label for="name">名称：{{$user->name}}</label>
+              <div class="form-group">
+              <label for="name">名称：</label>
+              <input type="text" name="name" class="form-control" value="{{ $user->name }}">
+            </div>
               <input type="text" name="name" class="form-control" value="{{$user->name}}">
-
+              <h5>哈哈</h5>
               {{$user->name}}
             </div>
 

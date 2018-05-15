@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use  Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,23 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store', 'index']
+        ]);
+
+
+
+    }
+
+    public function index()
+    {
+        $users = User::all();
+        return view('users.index', compact('users'));
+    }
     public function create()
     {
         return view('users.create');
@@ -44,10 +61,12 @@ class UsersController extends Controller
 
     }
 //用户编辑的页面,查找用户数据，进行将数据赋予给User 视图
-    public function edit($id)
+ public function edit(User $user)
     {
-        $user =User::find($id);
-        return view('user.edit',compact('user'));
+
+        $user = User::findOrFail(6);
+
+        return view('users.edit', compact('user'));
     }
 
 }
